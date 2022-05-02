@@ -29,11 +29,8 @@ class ApplicationController < Sinatra::Base
 
 
 
-
-
-
   #run! if app_file == $0 # <= exécuter le code de la classe sans avoir à écrire un ApplicationController.new.perform en bas du fichier (inutile ici car on va utiliser config.ru)
 
 end #fin de la classe ApplicationController
 
-Gossip.new.save
+Gossip.new("Kubi", "ta soeur la chauve").save

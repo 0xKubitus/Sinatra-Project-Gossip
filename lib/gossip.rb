@@ -6,9 +6,16 @@ require 'pry'
 
 class Gossip
 
+  attr_accessor :author, :content
+
+  def initialize(author, content)
+    @author = author
+    @content = content
+  end
+
   def save
     CSV.open("./db/gossip.csv", "ab") do |csv| # ouvrir le CSV en mode écriture (ab) (le CSV a le path: db/gossip.csv)
-    csv << ["Mon super auteur", "Ma super description"]# <= paramètres à remplacer
+    csv << [@author, @content]# <= paramètres à remplacer
     end
   end
 
