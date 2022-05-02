@@ -20,13 +20,12 @@ class Gossip
   end
 
   def self.all
-    csv_file = CSV.read("./db/gossip.csv")
     all_gossips = []
 
-    csv_file.each do |line|
-      gossip_line = Gossip.new(line[0], line[1])
-      all_gossips << gossip_line
-      return all_gossips
+    CSV.read("./db/gossip.csv").each do |csv_line|
+      all_gossips << Gossip.new(csv_line[0], csv_line[1])
+    end
+    return all_gossips
   end
 
 

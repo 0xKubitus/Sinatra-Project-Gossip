@@ -7,5 +7,14 @@
       <p>Dis l'ami, tu veux
         <a href="/gossips/new/">lancer une rumeur ?</a>
       </p>
+      <p> </p>
+      <h3>Voici la liste des rumeurs enregistrées :</h3>
+      <p> </p>
+      <% gossips.each do |gossip| %>
+        <p>
+          <%= gossip.author %><br/>
+          <%= gossip.content %>
+        </p>
+      <% end %>
   </body>
 </html>

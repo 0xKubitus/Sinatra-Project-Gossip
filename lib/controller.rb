@@ -3,7 +3,7 @@ require_relative "gossip"
 class ApplicationController < Sinatra::Base
 
   get '/' do
-    erb :index # <= aller chercher le fichier index.erb rangé dans le dossier /views
+    erb :index, locals: {gossips: Gossip.all} # <= aller chercher le fichier index.erb rangé dans le dossier /views
   end
 
   # ici on va indiquer quel view afficher lorsque le user clique sur le lien menant vers /gossips/new :
