@@ -25,6 +25,8 @@ class ApplicationController < Sinatra::Base
   end
 
 
+  get '/gossips/:id' do
+    "Voici le n° du ragot que tu veux afficher: #{params[id]}"
   
 
 
