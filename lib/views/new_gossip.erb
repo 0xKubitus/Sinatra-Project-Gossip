@@ -1,5 +1,14 @@
 <html>
+  <head>
+    <title>Nouvelle rumeur</title>
+  </head>
   <body>
-    <p>test</p>
+    <h1>Lancer une rumeur !</h1>
+    <p>Balance ta rumeur :</p>
+    <form action='/gossips/new/' method='POST'>
+      D'abord, rappelle moi ton nom : <input type='text' name='gossip_author'/><br/>
+      Balance ta rumeur : <input type='text' name='gossip_author'/><br/>
+      <input type='submit'/>
+    </form>
   </body>
 </html>
