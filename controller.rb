@@ -1,6 +1,3 @@
-require 'bundler'
-Bundler.require
-
 class ApplicationController < Sinatra::Base
   get '/' do
     "<html>
@@ -13,5 +10,5 @@ class ApplicationController < Sinatra::Base
     </html>"
   end
 
-  run! if app_file == $0
+  #run! if app_file == $0 # <= exécuter le code de la classe sans avoir à écrire un ApplicationController.new.perform en bas du fichier (inutile ici car on va utiliser config.ru)
 end
