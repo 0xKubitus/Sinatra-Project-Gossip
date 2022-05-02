@@ -19,15 +19,14 @@ class ApplicationController < Sinatra::Base
     puts "Ceci est le contenu du hash params : #{params}"
     puts "Trop bien ! Et ceci est ce que l'utilisateur a passé dans le champ gossip_author : #{params["gossip_author"]}"
     puts "De la bombe, et du coup ça, ça doit être ce que l'utilisateur a passé dans le champ gossip_content : #{params["gossip_content"]}"
-    puts "Ça déchire sa mémé, bon allez je m'en vais du serveur, ciao les BGs !"
     Gossip.new(params["gossip_author"], params["gossip_content"]).save
     redirect '/'
   end
 
 
-  get '/gossips/:id' do
-    "Voici le n° du ragot que tu veux afficher: #{params[id]}"
-  
+  get '/gossips/:id' do #ici on déclare ':id' comme variable d'URL dynamique
+    erb :show, locals: {gossip: Gossip.find("#{params['id']}"), gossipID: "#{params['id']}"} # ici on lie le n° du potin à la page show via le GossipID (cf. show.erb)
+  end
 
 
 

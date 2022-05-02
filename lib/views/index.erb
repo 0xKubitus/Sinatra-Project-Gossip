@@ -2,19 +2,23 @@
   <head>
     <title>The Gossip Project</title>
   </head>
+
   <body>
     <h1>Mon super site de gossip, depuis le dossier views !</h1>
+
       <p>Dis l'ami, tu veux
         <a href="/gossips/new/">lancer une rumeur ?</a>
       </p>
+
       <p> </p>
-      <h3>Voici la liste des rumeurs enregistrées :</h3>
+      <h3>Voici la liste de toutes rumeurs enregistrées :</h3>
       <p> </p>
       <% gossips.each do |gossip| %>
-        <p>
-          <%= gossip.author %><br/>
-          <%= gossip.content %>
-        </p>
+       
+        <a href="http://localhost:4567/gossips/<%=index+1%>">Viens checker la page de la rumeur !</a>
       <% end %>
+
+
+
   </body>
 </html>
