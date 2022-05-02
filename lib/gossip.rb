@@ -26,6 +26,7 @@ class Gossip
     csv_file.each do |line|
       gossip_line = Gossip.new(line[0], line[1])
       all_gossips << gossip_line
+      return all_gossips
   end
 
 
