@@ -21,6 +21,7 @@ class ApplicationController < Sinatra::Base
     puts "De la bombe, et du coup ça, ça doit être ce que l'utilisateur a passé dans le champ gossip_content : #{params["gossip_content"]}"
     puts "Ça déchire sa mémé, bon allez je m'en vais du serveur, ciao les BGs !"
     Gossip.new(params["gossip_author"], params["gossip_content"]).save
+    redirect '/'
   end
 
 
